@@ -36,7 +36,6 @@ Designed to support internal workflows at HORIBA FuelCon, this tool helps encode
 
 🗂 Project Structure
 --------------------
-## 📦 Project Structure
 
 ```bash
 ├── app.py              # Streamlit frontend logic
