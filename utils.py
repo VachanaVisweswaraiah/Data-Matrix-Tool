@@ -1,17 +1,22 @@
-from pylibdmtx.pylibdmtx import encode
+from pylibdmtx.pylibdmtx import encode, decode
 from PIL import Image
 import os
 
 def save_datamatrix(data: str, filename: str) -> str:
-    """Generate a DataMatrix image and save it as PNG."""
+    """Generate and save a DataMatrix code as PNG."""
     encoded = encode(data.encode("utf-8"))
+    img = Image.frombytes('RGB', (encoded.width, encoded.height), encoded.pixels)
     path = os.path.join("outputs", filename)
-
-    # Write raw image bytes
-    with open(path, "wb") as f:
-        f.write(encoded) 
-
+    img.save(path, format="PNG")
     return path
+
+def decode_datamatrix(image_path: str) -> str:
+    """Decode a DataMatrix image and return the content."""
+    img = Image.open(image_path)
+    decoded = decode(img)
+    if decoded:
+        return decoded[0].data.decode("utf-8")
+    return "Could not decode DataMatrix."
 
 def ip_to_hex(ip: str) -> str:
     parts = ip.strip().split(".")
