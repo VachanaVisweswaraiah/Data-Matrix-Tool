@@ -1,4 +1,4 @@
-from pylibdmtx import encode
+from pylibdmtx.pylibdmtx import encode
 from PIL import Image
 import os
 
