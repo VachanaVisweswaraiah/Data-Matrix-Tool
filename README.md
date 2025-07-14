@@ -36,8 +36,18 @@ Designed to support internal workflows at HORIBA FuelCon, this tool helps encode
 
 🗂 Project Structure
 --------------------
+## 📦 Project Structure
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEdit.  ├── app.py               # Streamlit frontend logic  ├── utils.py             # Encode/decode utility functions  ├── requirements.txt     # All dependencies  ├── Dockerfile           # Containerization  ├── .dockerignore  ├── .gitignore  ├── README.md  └── outputs/             # Saved barcode images   `
+```bash
+├── app.py              # Streamlit frontend logic
+├── utils.py            # Encode/decode utility functions
+├── requirements.txt    # All dependencies
+├── Dockerfile          # Containerization
+├── .dockerignore
+├── .gitignore
+├── README.md
+└── outputs/            # Saved barcode images
+```
 
 🚀 Run Locally
 --------------
