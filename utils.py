@@ -9,7 +9,7 @@ def save_datamatrix(data: str, filename: str) -> str:
 
     # Write raw image bytes
     with open(path, "wb") as f:
-        f.write(encoded)  # ✅ fix here (was: encoded.png)
+        f.write(encoded) 
 
     return path
 
