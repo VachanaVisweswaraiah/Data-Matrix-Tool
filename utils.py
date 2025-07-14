@@ -1,19 +1,17 @@
-# utils.py
-import segno
+from pylibdmtx import encode
 from PIL import Image
 import os
 
 def save_datamatrix(data: str, filename: str) -> str:
-    """Generate and save a DataMatrix code as PNG"""
-    dm = segno.make(data, micro=False)
+    """Generate a DataMatrix and save it as a PNG."""
+    encoded = encode(data.encode("utf-8"))
     path = os.path.join("outputs", filename)
-    dm.save(path, scale=5)
+    with open(path, "wb") as f:
+        f.write(encoded.png)
     return path
 
 def ip_to_hex(ip: str) -> str:
-    """Convert IP address to 8-char uppercase hex string"""
     parts = ip.strip().split(".")
     if len(parts) != 4:
         raise ValueError("Invalid IP format")
-    hex_parts = [f"{int(p):02X}" for p in parts]
-    return ''.join(hex_parts)
+    return ''.join(f"{int(p):02X}" for p in parts)
