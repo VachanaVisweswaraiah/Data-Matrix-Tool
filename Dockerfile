@@ -1,9 +1,8 @@
-# Use official Python base
 FROM python:3.11-slim
 
-# Install libdmtx dependencies
+# Install libdmtx dependencies (updated: libdmtx0a → libdmtx0b)
 RUN apt-get update && apt-get install -y \
-    libdmtx0a \
+    libdmtx0b \
     libdmtx-dev \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
@@ -11,14 +10,14 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy all project files
+# Copy all files
 COPY . .
 
 # Install Python dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port
-EXPOSE 8501
+# Set Streamlit to run on port 8000 and expose it
+EXPOSE 8000
 
-# Run Streamlit
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Run Streamlit app
+CMD ["streamlit", "run", "app.py", "--server.port=8000", "--server.enableCORS=false"]
