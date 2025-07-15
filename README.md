@@ -25,7 +25,7 @@ Designed to support internal workflows at HORIBA FuelCon, this tool helps encode
 
 *   Convert any long string into a scannable Data Matrix code
     
-*   Convert IP addresses (IPv4) into compact hex-encoded Data Matrix
+*   Convert IP addresses (IPv4) into compact individual hex-encoded Data Matrix
     
 *   Instant barcode preview
     
