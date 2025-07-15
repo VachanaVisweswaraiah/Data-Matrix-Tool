@@ -17,7 +17,7 @@ Designed to support internal workflows at HORIBA FuelCon, this tool helps encode
     
 *   Network device IPs
     
-*   Serial numbers and configuration stringsinto **Data Matrix codes** that can be scanned and printed using standard barcode readers like **PowerScan PM9600**.
+*   Serial numbers and configuration strings into **Data Matrix codes** that can be scanned and printed using standard barcode readers like **PowerScan PM9600**.
     
 
 📦 Features
